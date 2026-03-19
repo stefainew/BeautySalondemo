@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-ivory text-charcoal font-dm antialiased; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-rose text-white font-dm font-medium text-sm tracking-widest uppercase
+           px-8 py-3 rounded-full transition-all duration-300
+           hover:bg-rose-dark hover:shadow-lg hover:shadow-rose/30 hover:-translate-y-0.5;
+  }
+  .btn-secondary {
+    @apply inline-block border border-rose text-rose font-dm font-medium text-sm tracking-widest uppercase
+           px-8 py-3 rounded-full transition-all duration-300
+           hover:bg-rose hover:text-white hover:-translate-y-0.5;
+  }
+  .section-label {
+    @apply font-dm text-xs uppercase tracking-[0.25em] text-gold font-medium;
+  }
+  .section-title {
+    @apply font-cormorant text-4xl md:text-5xl font-semibold text-charcoal leading-tight;
+  }
+  .card {
+    @apply bg-ivory rounded-2xl shadow-sm border border-accent-pink/50
+           transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:shadow-rose/10;
+  }
+  .input-field {
+    @apply w-full bg-white border border-accent-pink rounded-xl px-4 py-3 text-charcoal text-sm font-dm
+           focus:outline-none focus:border-rose focus:ring-2 focus:ring-rose/20 transition-all;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stagger > *:nth-child(1) { transition-delay: 0.05s; }
+.stagger > *:nth-child(2) { transition-delay: 0.15s; }
+.stagger > *:nth-child(3) { transition-delay: 0.25s; }
+.stagger > *:nth-child(4) { transition-delay: 0.35s; }
+.stagger > *:nth-child(5) { transition-delay: 0.45s; }
